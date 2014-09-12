@@ -1,0 +1,1 @@
+Acquire::http { Proxy "http://apt-cacher-ng:3142"; };
