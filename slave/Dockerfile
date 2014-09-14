@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ewencp/dind
 
 # Install buildbot, its dependencies, and dependencies for builds
 RUN apt-get update
@@ -18,4 +18,4 @@ ADD info/host /data/buildbot/slave/info/host
 # Service
 ADD buildbot.conf /etc/supervisor/conf.d/buildbot.conf
 
-CMD ["/usr/bin/supervisord", "-n"]
+CMD ["wrapdocker", "/usr/bin/supervisord", "-n"]
